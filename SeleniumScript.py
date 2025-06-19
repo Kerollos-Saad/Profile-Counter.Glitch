@@ -8,7 +8,6 @@ URL = f"https://profile-counter.glitch.me/{{{Github_UserName}}}/count.svg"
 REFRESH_COUNT = 1500
 DELAY_SECONDS = 0.1
 
-# Set up the Chrome driver
 # Start Edge WebDriver
 service = Service()  # Will look for msedgedriver in PATH
 driver = webdriver.Edge(service=service)
