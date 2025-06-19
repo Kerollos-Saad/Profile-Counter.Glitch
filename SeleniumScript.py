@@ -1,5 +1,6 @@
 from selenium import webdriver
 from selenium.webdriver.edge.service import Service
+from webdriver_manager.microsoft import EdgeChromiumDriverManager
 import time
 
 # CONFIG
@@ -8,9 +9,13 @@ URL = f"https://profile-counter.glitch.me/{{{Github_UserName}}}/count.svg"
 REFRESH_COUNT = 1500
 DELAY_SECONDS = 0.1
 
+#Already Install Edge WebDriver
 # Start Edge WebDriver
 service = Service()  # Will look for msedgedriver in PATH
 driver = webdriver.Edge(service=service)
+
+# Setup Edge with automatic WebDriver installation For First Time
+# driver = webdriver.Edge(service=Service(EdgeChromiumDriverManager().install()))
 
 # Open the webpage
 driver.get(URL)
